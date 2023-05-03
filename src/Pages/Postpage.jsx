@@ -24,6 +24,9 @@ const Postpage = () => {
       `https://blog-mern-mass.vercel.app/post/${id}`,
       {
         withCredentials: true,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
       }
     );
     navigate("/");

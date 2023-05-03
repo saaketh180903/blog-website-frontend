@@ -19,7 +19,10 @@ const CreatePost = () => {
 
     await axios.post("https://blog-mern-mass.vercel.app/post", formData, {
       withCredentials: true,
-      headers: { "Content-Type": "multipart/form-data" },
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "Access-Control-Allow-Origin": "*",
+      },
     });
     navigate("/");
   };

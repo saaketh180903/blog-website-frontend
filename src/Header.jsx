@@ -16,6 +16,9 @@ const Header = () => {
     fetch("https://blog-mern-mass.vercel.app/logout", {
       method: "POST",
       credentials: "include",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
     });
     setUserInfo(null);
   };

@@ -6,7 +6,11 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     async function getPost() {
-      const post = await axios.get("https://blog-mern-mass.vercel.app/post");
+      const post = await axios.get("https://blog-mern-mass.vercel.app/post", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
       setPosts(post.data);
     }
     getPost();

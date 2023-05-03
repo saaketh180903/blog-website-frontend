@@ -40,6 +40,9 @@ export default function EditPost() {
           method: "PUT",
           body: data,
           credentials: "include",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
         }
       );
 
@@ -60,6 +63,10 @@ export default function EditPost() {
           method: "PUT",
           body: data,
           credentials: "include",
+
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
         }
       );
 

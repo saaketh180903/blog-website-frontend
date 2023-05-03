@@ -24,7 +24,10 @@ const Register = () => {
       const res = await fetch("https://blog-mern-mass.vercel.app/register", {
         method: "POST",
         body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
       });
       if (res.status === 200) {
         alert("registration Successfull");
