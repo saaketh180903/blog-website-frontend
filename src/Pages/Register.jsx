@@ -21,7 +21,7 @@ const Register = () => {
       };
       console.log(data);
 
-      const res = await fetch("http://localhost:4000/register", {
+      const res = await fetch("https://blog-mern-mass.vercel.app/register", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" },

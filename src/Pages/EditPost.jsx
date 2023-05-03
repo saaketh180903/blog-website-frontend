@@ -13,7 +13,7 @@ export default function EditPost() {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4000/edit/" + id).then((response) => {
+    fetch("https://blog-mern-mass.vercel.app/edit/" + id).then((response) => {
       response.json().then((postInfo) => {
         setTitle(postInfo.title);
         setContent(postInfo.content);
@@ -34,11 +34,14 @@ export default function EditPost() {
       data.append("id", id);
       data.append("image", files);
 
-      const response = await fetch(`http://localhost:4000/edit/${id}`, {
-        method: "PUT",
-        body: data,
-        credentials: "include",
-      });
+      const response = await fetch(
+        `https://blog-mern-mass.vercel.app/edit/${id}`,
+        {
+          method: "PUT",
+          body: data,
+          credentials: "include",
+        }
+      );
 
       if (response.ok) {
         setRedirect(true);
@@ -51,11 +54,14 @@ export default function EditPost() {
       data.append("id", id);
       data.append("image", fileName);
 
-      const response = await fetch(`http://localhost:4000/post/${id}`, {
-        method: "PUT",
-        body: data,
-        credentials: "include",
-      });
+      const response = await fetch(
+        `https://blog-mern-mass.vercel.app/post/${id}`,
+        {
+          method: "PUT",
+          body: data,
+          credentials: "include",
+        }
+      );
 
       if (response.ok) {
         setRedirect(true);
@@ -88,12 +94,14 @@ export default function EditPost() {
         placeholder={"Title"}
         value={title}
         onChange={(ev) => setTitle(ev.target.value)}
+        required
       />
       <input
         type="summary"
         placeholder={"Summary"}
         value={summary}
         onChange={(ev) => setSummary(ev.target.value)}
+        required
       />
       <input
         type="file"

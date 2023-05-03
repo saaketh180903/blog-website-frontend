@@ -10,7 +10,9 @@ const Postpage = () => {
   const [postInfo, setPostInfo] = useState(null);
   useEffect(() => {
     const getPostById = async () => {
-      const res = await axios.get(`http://localhost:4000/post/${id}`);
+      const res = await axios.get(
+        `https://blog-mern-mass.vercel.app/post/${id}`
+      );
       setPostInfo(res.data);
     };
     getPostById();
@@ -18,9 +20,12 @@ const Postpage = () => {
   const handleDelete = async (e) => {
     console.log("hai");
     e.preventDefault();
-    const res = await axios.delete(`http://localhost:4000/post/${id}`, {
-      withCredentials: true,
-    });
+    const res = await axios.delete(
+      `https://blog-mern-mass.vercel.app/post/${id}`,
+      {
+        withCredentials: true,
+      }
+    );
     navigate("/");
   };
   return (

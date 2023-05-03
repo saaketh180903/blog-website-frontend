@@ -17,7 +17,7 @@ const CreatePost = () => {
     formData.append("content", content);
     formData.append("image", files);
 
-    await axios.post("http://localhost:4000/post", formData, {
+    await axios.post("https://blog-mern-mass.vercel.app/post", formData, {
       withCredentials: true,
       headers: { "Content-Type": "multipart/form-data" },
     });

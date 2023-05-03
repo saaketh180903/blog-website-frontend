@@ -6,7 +6,7 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     async function getPost() {
-      const post = await axios.get("http://localhost:4000/post");
+      const post = await axios.get("https://blog-mern-mass.vercel.app/post");
       setPosts(post.data);
     }
     getPost();
