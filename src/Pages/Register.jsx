@@ -31,6 +31,7 @@ const Register = () => {
       });
       if (res.status === 200) {
         alert("registration Successfull");
+        navigate("/login");
       } else {
         alert("registration Fail");
       }
