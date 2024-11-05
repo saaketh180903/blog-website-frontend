@@ -18,7 +18,7 @@ const Login = () => {
       password,
     };
 
-    const res = await fetch("https://blog-mern-mass.vercel.app/login", {
+    const res = await fetch("http://107.21.183.182:3001/login", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

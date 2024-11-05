@@ -11,7 +11,7 @@ const Postpage = () => {
   useEffect(() => {
     const getPostById = async () => {
       const res = await axios.get(
-        `https://blog-mern-mass.vercel.app/post/${id}`
+        `http://107.21.183.182:3001/post/${id}`
       );
       setPostInfo(res.data);
     };
@@ -21,7 +21,7 @@ const Postpage = () => {
     console.log("hai");
     e.preventDefault();
     const res = await axios.delete(
-      `https://blog-mern-mass.vercel.app/post/${id}`,
+      `http://107.21.183.182:3001/post/${id}`,
       {
         withCredentials: true,
         headers: {
